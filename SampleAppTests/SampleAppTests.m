@@ -6,12 +6,19 @@
 //  Copyright © 2016 Johannes Plunien. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+#import <KIF/KIF.h>
 
-@interface SampleAppTests : XCTestCase
+@interface SampleAppTests : KIFTestCase
 
 @end
 
 @implementation SampleAppTests
+
+- (void)testRows
+{
+    for (NSInteger i = 0; i < 50; i++) {
+        [tester waitForViewWithAccessibilityLabel:[NSString stringWithFormat:@"Row %zd", i]];
+    }
+}
 
 @end
