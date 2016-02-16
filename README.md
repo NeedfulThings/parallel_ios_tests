@@ -2,7 +2,7 @@
 
 ## tl;dr
 
-* `git clone git@github.com:plu/parallel_ios_tests`
+* `git clone --recursive git@github.com:plu/parallel_ios_tests.git`
 * `cd parallel_ios_tests && bundle && rake`
 * [How?](#run-on-multiple-devices-in-parallel)
 
