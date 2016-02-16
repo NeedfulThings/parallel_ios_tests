@@ -33,6 +33,9 @@ task :test do
         junit_xml = File.join(Dir.pwd, 'build', "#{device.name}.junit.xml")
         system "#{xctool} run-tests -destination 'id=#{device.udid}' -reporter plain:'#{test_log}' -reporter junit:'#{junit_xml}'"
         Thread.current[:result] = $?
+        device.kill!
+        device.shutdown!
+        device.delete!
       end
     end
 
