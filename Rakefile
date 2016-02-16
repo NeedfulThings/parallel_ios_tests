@@ -29,7 +29,9 @@ task :test do
     # Run tests on each device in a separate thread
     devices.each do |device|
       threads << Thread.new do
-        system "#{xctool} run-tests -destination 'id=#{device.udid}'"
+        test_log = File.join(Dir.pwd, 'build', "#{device.name}.log")
+        junit_xml = File.join(Dir.pwd, 'build', "#{device.name}.junit.xml")
+        system "#{xctool} run-tests -destination 'id=#{device.udid}' -reporter plain:'#{test_log}' -reporter junit:'#{junit_xml}'"
         Thread.current[:result] = $?
       end
     end
