@@ -21,4 +21,14 @@
     }
 }
 
+- (void)testDetailView
+{
+    for (NSInteger i = 0; i < 25; i++) {
+        [tester tapViewWithAccessibilityLabel:[NSString stringWithFormat:@"Row %zd", i]];
+        [tester waitForViewWithAccessibilityLabel:[NSString stringWithFormat:@"Detail %zd", i]];
+        [tester tapViewWithAccessibilityLabel:@"SampleApp"];     // Back button
+        [tester waitForViewWithAccessibilityLabel:@"SampleApp"]; // NavigationBar title
+    }
+}
+
 @end
