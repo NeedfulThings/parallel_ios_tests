@@ -30,6 +30,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="aXY-zL-qQh" kind="show" id="q8T-aY-mDP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -42,6 +45,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hd0-J5-MSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1616" y="503"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="1BS-gf-lWm">
+            <objects>
+                <viewController id="aXY-zL-qQh" customClass="DetailViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GB6-Dc-sG8"/>
+                        <viewControllerLayoutGuide type="bottom" id="r43-d4-jm5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aWP-CS-dXV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXk-wf-DBd">
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CXk-wf-DBd" firstAttribute="centerY" secondItem="aWP-CS-dXV" secondAttribute="centerY" id="lTU-Ag-WVQ"/>
+                            <constraint firstItem="CXk-wf-DBd" firstAttribute="centerX" secondItem="aWP-CS-dXV" secondAttribute="centerX" id="oxX-7e-jSe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailLabel" destination="CXk-wf-DBd" id="0ff-Ol-r2x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KIB-bk-VWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2361" y="503"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Abl-gH-cVf">

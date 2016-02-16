@@ -24,4 +24,11 @@ class ViewController: UITableViewController {
         return cell
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let detailViewController = segue.destinationViewController as? DetailViewController else { return }
+        guard let cell = sender as? UITableViewCell else { return }
+        guard let indexPath = self.tableView.indexPathForCell(cell) else { return }
+        detailViewController.detailLabelText = "Detail \(indexPath.row)"
+    }
+
 }
